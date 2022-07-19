@@ -33,9 +33,12 @@ class LinkedList(object):
         current = self.head
         value = "None"
         while current.next:
-            if position == current.next:
-                value = current.value
+            if position == current.value:
+                value = current
                 break
+            current = current.next
+        if position == current.value:
+            value = current
         return value
     
     def insert(self, new_element, position):
